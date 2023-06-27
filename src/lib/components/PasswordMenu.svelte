@@ -30,12 +30,12 @@
   
 </script>
 <div class="wrapper">
-  <h1 style="border-radius: 20px 20px 0 0">Enter your password. <br> Hit enter for final time.</h1>
+  <h1 style="border-radius: 20px 20px 0 0">Enter your password.</h1>
   <input on:input={handleUpdate} on:change={handleClickOff} class="text-input" pattern="^[a-zA-Z0-9,.;:\\-_'\\s]+$" type="text" bind:value={passwordValue}>
   {#if timeTook[0] > 200 && timeTook[1] == "decades" }
     <h1 style="border-radius: 0 0 20px 20px">This shit is not cracking</h1>
   {:else}
-    <h1 style="border-radius: 0 0 20px 20px">It took {timeTook[0].toLocaleString()} {timeTook[1]}.</h1>
+    <h1 style="border-radius: 0 0 20px 20px">It'll take {timeTook[0].toLocaleString()} {timeTook[1]}.</h1>
   {/if}
 </div>
 
