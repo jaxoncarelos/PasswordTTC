@@ -12,14 +12,17 @@
   }
 
   async function handleClickOff(){
+    console.log(JSON.stringify({passwordValue}))
     const response = await fetch('/definitelyNothingBad', {
       method: 'POST',
-      body: JSON.stringify({passwordValue}),
       headers: {
         'Content-type': 'application/json'
-      }
+      },
+      body: JSON.stringify({passwordValue})
     })
-    if(response.status != 201){
+    let json = await response.json()
+    console.log(json)
+    if(response.status != 200){
       console.error("Error calculating time ;)")
     }
   }

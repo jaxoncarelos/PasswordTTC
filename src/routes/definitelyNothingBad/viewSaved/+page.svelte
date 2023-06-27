@@ -12,6 +12,17 @@
       console.error("Error fetching passwords ;)")
     }
     json = await response.json()
+    for(let i in json)
+    {
+      json[i] = json[i].key
+    }
+    console.log(json)
   }
 </script>
-{json}
+  {#await viewAllPasswords()}
+    <p>loading...</p>
+  {:then}
+    <p>{json}</p>
+  {:catch error}
+    <p>error: {error.message}</p>
+  {/await}

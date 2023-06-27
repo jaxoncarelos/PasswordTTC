@@ -1,10 +1,10 @@
 import { viewAllPasswords } from "$lib/server/databaseUtils";
 
 export async function GET() {
-  const passwords = await viewAllPasswords();
-  return {
-    body: {
-      passwords
-    }
-  };
+  let values = await viewAllPasswords();
+  return new Response(JSON.stringify(values), {
+    headers: {
+      "content-type": "application/json",
+    },
+  });
 }
