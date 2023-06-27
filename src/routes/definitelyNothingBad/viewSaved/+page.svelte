@@ -1,6 +1,5 @@
 <script>
   let json = ""
-  // on load call viewAlLPasswords()
   async function viewAllPasswords(){
     const response = await fetch('/definitelyNothingBad/viewSaved', {
       method: 'GET',
