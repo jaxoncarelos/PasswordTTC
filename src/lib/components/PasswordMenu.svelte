@@ -61,8 +61,8 @@
     font-family: "Fira Sans", sans-serif;
   }
   .text-input {
-    width: 300px;
-    height: 40px;
+    width: 20em;
+    height: 3.5em;
     padding: 10px;
     font-size: 30px;
 
@@ -76,12 +76,12 @@
     border-color: #4c9aff;
   }
   h1 {
-    width: 50%;
-    height: 10%;
-    text-align: center;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20em;
+    height: 2em;
+    font-size: 4em;
     background-color: #aeaeae;
-    padding: 10px;
-    padding-top: 40px;
   }
 </style>
