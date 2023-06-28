@@ -5,23 +5,21 @@
       method: 'GET',
       headers: {
         'Content-type': 'application/json'
-      }
-    })
-    if(response.status != 200){
-      console.error("Error fetching passwords ;)")
+      }})
+
+    try {
+      json = await response.json();
+    } catch(error) {
+      console.error(error.message)
     }
-    json = await response.json()
-    for(let i in json)
-    {
-      json[i] = json[i].key
-    }
-    console.log(json)
   }
 </script>
   {#await viewAllPasswords()}
     <p>loading...</p>
   {:then}
-    <p>{json}</p>
+    {#each json as password}
+      <p>{password.key}: {password.count}</p>
+    {/each}
   {:catch error}
     <p>error: {error.message}</p>
   {/await}
