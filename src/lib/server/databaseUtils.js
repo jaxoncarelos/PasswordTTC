@@ -31,9 +31,10 @@ export function savePassword(password) {
       }
     });
     let stmt = db.prepare(
-      `INSERT INTO passwords(key) VALUES(?) ON CONFLICT (key) DO UPDATE SET value = value + 1;`
+      `INSERT INTO passwords(key, count) VALUES(?, ?) ON CONFLICT (key) DO UPDATE SET count = count + 1;`
     );
-    stmt.run([password.passwordValue], function (err) {
+    
+    stmt.run([password.passwordValue, 1], function (err) {
       if (err) {
         reject(err);
       }

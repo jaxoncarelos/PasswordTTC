@@ -6,7 +6,7 @@
     return [0, "seconds"]
   }
   const characters = 95; 
-  const attemptsPerSecond = 10e9; 
+  const attemptsPerSecond = 10e12; 
   
   const passwordLength = password.length;
   const combinations = Math.pow(characters, passwordLength);
