@@ -62,10 +62,9 @@
   }
   .text-input {
     width: 20em;
-    height: 3.5em;
-    padding: 10px;
-    font-size: 30px;
-
+    height: 2.5em;
+    padding-left: .5em;
+    font-size: 2em;
     border: 2px solid #ccc;
     border-radius: 5px;
     outline: none;
