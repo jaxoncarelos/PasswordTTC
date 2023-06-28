@@ -24,7 +24,6 @@ export function savePassword(password) {
     console.log(password);
     let db = new sqlite3.Database("./src/lib/server/database.db", (err) => {
       if (err) {
-        z;
         console.error(err.message);
       } else {
         console.log("Connected to the database.");
